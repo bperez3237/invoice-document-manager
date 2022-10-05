@@ -1,3 +1,3 @@
 class SubcontractorSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :period_end, :lunch
 end
