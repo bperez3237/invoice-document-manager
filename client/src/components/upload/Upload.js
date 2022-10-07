@@ -77,8 +77,14 @@ function Upload() {
             </form>
 
             <button onClick={handleConvert}>Convert to CPR Spreadsheet</button>
+            <label>sub:</label>
+            <select>{subOptions}</select>
+            <label>Invoice Month:</label>
             <select>
-               {subOptions}
+                <option>September 2022</option>
+                <option>October 2022</option>
+                <option>November 2022</option>
+                <option>December 2022</option>
             </select>
         </div>
     )
