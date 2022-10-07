@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'date'
+# require 'byebug'
 
 
 puts 'seeding subs'
@@ -17,6 +18,9 @@ s2 = Subcontractor.create(name: 'sub 2', period_end: Date.new(2022,10,4),lunch: 
 
 puts 'seeding workers'
 
-w1 = Worker.create(name: 'guy 1', base: 10, pt_base: 15, fringe: 8, pt_fringe: 11, section3: false, subcontractor_id: s1.id) 
+w1 = Worker.create(name: 'guy 1', base: 10, pt_base: 15, fringe: 8, pt_fringe: 11, section3: true, subcontractor_id: s1.id) 
 w2 = Worker.create(name: 'guy 2', base: 20, pt_base: 30, fringe: 8, pt_fringe: 11, section3: true, subcontractor_id: s2.id) 
-w3 = Worker.create(name: 'guy 3', base: 10, pt_base: 15, fringe: 8, pt_fringe: 11, section3: false, subcontractor_id: s1.id) 
+w3 = Worker.create(name: 'guy 3', base: 10, pt_base: 15, fringe: 8, pt_fringe: 11, section3: true, subcontractor_id: s2.id) 
+
+
+

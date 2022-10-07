@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ExcelDateToJSDate } from './utils/convert'
 import useFetch from "../../hooks/useFetch";
+import { SubContext } from "../../context/SubContext";
 
 var xlsx = require("xlsx")
 // import XLSX from 'xlsx'
@@ -8,6 +9,8 @@ var xlsx = require("xlsx")
 
 function Upload() {
     const [data, setData] = useState([])
+    const {subs} = useContext(SubContext)
+    console.log(subs)
 
     const readUploadFile =  (e) => {
         e.preventDefault();
@@ -64,6 +67,7 @@ function Upload() {
         console.log('heeeeeere')
     }
 
+    const subOptions = subs?.map((sub)=><option key={sub.id} value={sub.name}>{sub.name}</option>)
 
     return(
         <div>
@@ -74,8 +78,7 @@ function Upload() {
 
             <button onClick={handleConvert}>Convert to CPR Spreadsheet</button>
             <select>
-                <option> Sub 1</option>
-                <option> Sub 2</option>
+               {subOptions}
             </select>
         </div>
     )
